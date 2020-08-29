@@ -8,7 +8,14 @@ resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
       
 scalaVersion := "2.11.12"
 
-libraryDependencies ++= Seq( javaJdbc , cache , javaWs )
+libraryDependencies ++= Seq(
+  javaJdbc,
+  cache,
+  javaWs,
+  "org.easytesting" % "fest-assert" % "1.4" % Test,
+  "org.fluentlenium" % "fluentlenium-core" % "3.7.1",
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.9.8"
+)
 
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
 
